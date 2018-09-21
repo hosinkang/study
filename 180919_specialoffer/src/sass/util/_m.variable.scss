@@ -1,0 +1,65 @@
+$static:'/promo/bns/event/2018/';
+$folder:'180919_specialoffer';
+
+$minWidth:320px;
+$imgWidth:100%;
+
+$fontFamily:AppleGothic, Hevetica, 'Malgun Gothic', '맑은고딕', Dotum, '돋움', sans-serif;
+$baseFontSize:14px;
+$indentValue:-999em;
+
+$fontColor:#7c7c7c;
+$linkColor:#7c7c7c;
+$bodyColor:#16161f;
+
+$button:(
+	'.btn-link-home': (
+		'width':187/2,
+		'height':101/2,
+		'top':-3,
+		'margin-left': -187/4,
+		'bg':'m/logo.png'
+	),
+	'.btn-click-update': (
+		'width':186/2,
+		'height':45/2,
+		'top':9,
+		'bg':'m/btn.png'
+	),
+	'.btn-click-1-1': (
+		'width':24,
+		'height':24,
+		'top':485,
+		'margin-left':-12
+	),
+	'.btn-link-2-1': (
+		'width':172,
+		'height':34,
+		'top':728,
+		'margin-left':-86
+	),
+	'.btn-click-3-1': (
+		'width':24,
+		'height':24,
+		'top':503,
+		'margin-left':60
+	),
+	'.btn-layer-3-1': (
+		'width':160,
+		'height':42,
+		'top':833,
+		'margin-left':67
+	),
+	'.btn-layer-3-2': (
+		'width':160,
+		'height':42,
+		'top':833,
+		'margin-left':330
+	),
+	'.btn-link-case': (
+		'width':173,
+		'height':35,
+		'top':158,
+		'margin-left':-88
+	),
+);

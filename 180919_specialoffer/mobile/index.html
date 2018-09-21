@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+        layout:decorator="layout/bns/layout-mobile">
+
+<head layout:fragment="head-contents">
+    <title>한 눈에 보는 상품 : 놓칠 수 없는 특가</title>
+</head>
+
+<th:block layout:fragment="pageinfo-basic">
+    <!--// open graph protocol -->
+    <meta property="og:title" content="한 눈에 보는 상품 : 놓칠 수 없는 특가">
+    <meta property="og:image" th:content="|${ui['wstatic.bns']}/event/2018/180919_specialoffer/img/sns.jpg|">
+    <meta property="og:description" content="">
+    <!-- open graph protocol //-->
+
+    <!--// twitter image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="한 눈에 보는 상품 : 놓칠 수 없는 특가">
+    <meta name="twitter:image" th:content="|${ui['wstatic.bns']}/event/2018/180919_specialoffer/img/sns.jpg|">
+    <meta name="twitter:description" content="">
+    <!-- twitter image //-->
+
+    <link rel="shortcut icon" th:href="|${ui['wstatic.common']}/bns.ico|" type="image/x-icon" />
+    <link rel="icon" th:href="|${ui['wstatic.common']}/bns.ico|" type="image/x-icon" />
+
+    <link rel="stylesheet" th:href="|${ui['wstatic.default']}/promokit/v1.1/css/promokit.css|" />
+    <link rel="stylesheet" th:href="|${ui['wstatic.bns']}/event/2018/180919_specialoffer/css/m.index.css|">
+</th:block>
+
+<body>
+<div layout:fragment="content" th:with="folder=(${path.indexOf('UiDev') > -1}) ? 'UiDev/bns/2018/180919_specialoffer' : 'bns/2018/180919_specialoffer' ,isLogin=${#authorization.expression('isAuthenticated()')}">
+
+
+    <div id="header">
+        <a th:href="|${ui['home.bns']}|" class="btn-link-home">bns</a>
+        <a th:href="|${ui['home.bns']}/update/history/2018/180912_awaken|" class="btn-click-update">각성 업데이트</a>
+    </div>
+
+    <div id="contents">
+        <section data-id="section-1" class="section section-1" data-contents="con">
+            <ul class="list">
+                <li class="red"><a th:href="|${ui['home.bns']}/news/commonnotice/article/6578|"><strong><span>09. 12. ~ 10. 04.</span>가을맞이 소울 패키지</strong></a></li>
+                <li class="red"><a th:href="|${ui['home.bns']}/promo/bns/180919_hongmoon|"><strong><span>09. 19. ~ 10. 17.</span>홍문, 개화(開花)</strong></a></li>
+                <li class="red"><a th:href="|${ui['home.bns']}/promo/bns/180919_maple|"><strong><span>09. 19. ~ 10. 10.</span>단풍으로 물든 한가위</strong></a></li>
+                <li class="green"><a th:href="|${ui['home.bns']}/promo/bns/180919_awakenday|"><strong><span>09. 19. ~ 10. 10.</span>각성, 블소데이!</strong></a></li>
+                <li class="blue"><a th:href="|${ui['home.bns']}/regular/treasure|"><strong><span>09. 19. ~ 10. 17.</span>가을의 보물창고</strong></a></li>
+                <li class="blue"><a th:href="|${ui['home.bns']}/news/commonnotice/article/6590|"><strong><span>09. 19. ~ 10. 17.</span>령</strong></a></li>
+                <li class="blue"><a th:href="|${ui['home.bns']}/news/commonnotice/article/6590|"><strong><span>09. 19. ~ 10. 17.</span>혼</strong></a></li>
+                <li class="blue"><a th:href="|${ui['home.bns']}/promo/bns/180919_chain|"><strong><span>09. 19. ~ 10. 17.</span>사슬군도</strong></a></li>
+            </ul>
+        </section>
+    </div>
+
+    <th:block th:replace="|${folder}/mobile/fragment-footer| :: footer"></th:block>
+    <th:block th:replace="|${folder}/mobile/fragment-js| :: js"></th:block>
+</div>
+
+</body>
+</html>

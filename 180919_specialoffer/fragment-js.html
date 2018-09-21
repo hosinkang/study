@@ -1,0 +1,10 @@
+<th:block th:fragment="js">
+
+    <script th:inline="javascript">
+        var Param = JSON.parse([[${@mainContentsService.getData('promotion', '180919_specialoffer', true, 'ko_KR')}]]);
+    </script>
+    <script th:src="|${ui['wstatic.default']}/vendor/greensock/v1.19.1/TweenMax.min.js|"></script>
+    <script th:src="|${ui['wstatic.default']}/promokit/v1.1/js/promokit.js|"></script>
+    <script th:src="|${ui['wstatic.bns']}/event/2018/180919_specialoffer/js/index.js|"></script>
+
+</th:block>

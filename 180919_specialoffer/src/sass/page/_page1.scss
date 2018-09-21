@@ -1,0 +1,187 @@
+
+html,body, #container, #contents { height: 100%;}
+
+#header{
+	&:before{
+		@include position-abs($width: 100%, $height: 54px, $left: 0, $top: 33px);
+		background-color: rgba(0,0,0,0.4);
+		z-index: 1;
+		content: '';
+	}
+	h1{
+		@include position-abs($width: 648px, $height: 30%, $left: 50%, $top: 0);
+		text-indent: $indentValue;
+		padding-top: 87px;
+		z-index: 1; box-sizing: border-box;
+		span{
+			display: block; height: 100%;
+			@include bg($bg:'title.png', $position: 50% 50%);
+		}
+	}
+	.btn-click-update{
+		left: auto; right: 30px;
+		margin-left: 0;
+	}
+}
+
+#footer{
+	@include position-abs($width: 100%, $height: 11px, $left: 0, $bottom: 33px);
+	@include bg($bg:'footer.png');
+	text-indent: $indentValue;
+	z-index: 1;
+	.share{
+		@include position-abs($width: 33px, $left: 50%, $top: -10px);
+		margin-left: 140px;
+		z-index: 11;
+		.share__toggle {display: block;}
+	}
+}
+
+#container{
+	@include position-abs($width: 100%, $left: 0, $top: 0);
+	.section{
+		em, span, strong{ display:inline-block; }
+		table{ font-size: 0;}
+		&-1{
+			@include set-area($bg:'sec_1.jpg');
+			height: 100%;
+			background-size: cover;
+			.list{
+				@include position-abs($width: 100%, $height: 70%, $left: 0, $bottom: 0);
+				&.active{
+					li{
+						a{
+							& > span{
+								@include position-abs($width: 100%, $height: 100%, $left: 0, $bottom: 0);
+								&.bg{
+									@include bg($bg:'bg_pattern.png', $repeat: repeat, $position: 0 0);
+									background-color: rgba(0,0,0,0.3);
+								}
+								&.character{
+									opacity: 0;
+									background-size: contain;
+								}
+							}
+						}
+						&.red:after{
+							@include position-abs($width: 87px, $height: 89px, $left: 15px, $top: 15px);
+							@include bg($bg:'list_ico.png', $position: 0 0);
+							content: '';
+						}
+						&.green:after{
+							@include position-abs($width: 87px, $height: 89px, $left: 15px, $top: 15px);
+							@include bg($bg:'list_ico.png', $position: 0 -100px);
+							content: '';
+						}
+						&.blue:after{
+							@include position-abs($width: 87px, $height: 89px, $left: 15px, $top: 15px);
+							@include bg($bg:'list_ico.png', $position: 0 -200px);
+							content: '';
+						}
+
+						&:nth-child(1) strong { @include position-abs( $width: 261px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(2) strong { @include position-abs( $width: 194px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(3) strong { @include position-abs( $width: 259px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(4) strong { @include position-abs( $width: 184px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(5) strong { @include position-abs( $width: 198px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(6) strong { @include position-abs( $width: 116px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(7) strong { @include position-abs( $width: 116px, $height: 50px, $right: 50%, $top: 50%); }
+						&:nth-child(8) strong { @include position-abs( $width: 116px, $height: 50px, $right: 50%, $top: 50%); }
+
+						@for $i from 1 through 8 {
+							&:nth-child(#{$i}){
+								@include bg($bg:'list_#{$i}_bg.jpg');
+								strong{ @include bg($bg:'list_#{$i}_tit.png'); }
+								.character{ @include bg($bg:'list_#{$i}_ch.png', $position: left bottom); }
+							}
+						}
+					}
+				}
+				li{
+					float: left; width: 25%; height: 50%;
+					background-size: cover;
+					position: relative;
+					a{
+						display: block; width: 100%; height: 100%;
+						border-left: 1px solid rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.3);
+						box-sizing: border-box;
+					}
+					&:nth-child(1), &:nth-child(5){
+						a{ border-left: 0; }
+					}
+					&.end{
+						a{
+							pointer-events: none;
+							cursor: default;
+						}
+						strong{
+							background: none !important;
+						}
+						@for $i from 1 through 8 {
+							&:nth-child(#{$i}){
+								@include bg($bg:'list_#{$i}_end.jpg', $position: 50% 50%);
+							}
+						}
+						&:after{
+							display: none;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
+
+.toggle-caution{
+	background: #191919;
+	.disc-wrap{
+		width: $minWidth; height: 300px;
+		font:12px/24px 'Dotum'; text-indent:0;
+		margin-left:-490px;
+		position: relative; left: 50%;
+		a{ font-weight:bold; }
+		em { color: #fff; font-style:normal;}
+		span{
+			display:block;
+			padding-left:10px;
+		}
+		.disc{
+			margin: 30px 0 0 5px;
+		}
+		.notice{
+			margin: 20px 0 0 16px;
+			table{
+				line-height: 30px;
+				border: 1px solid #a4a4a4; border-top: 0;
+				margin-bottom: 20px;
+				caption{
+					height: auto;
+					font: 12px/24px 'Malgun Gothic'; text-align: left; font-weight: bold;
+					padding-bottom: 10px;
+				}
+				th{
+					width: 100px;
+					color: #191919;
+					background: #7c7c7c;
+				}
+				td{
+					width: 162px;
+					padding-left: 10px;
+					background: #333;
+				}
+				th, td{
+					height: 30px;
+					border-top: 1px solid #a4a4a4; border-left: 1px solid #a4a4a4;
+				}
+				tr{
+					th:first-child{ border-left: 0;}
+				}
+			}
+		}
+
+	}
+}
+

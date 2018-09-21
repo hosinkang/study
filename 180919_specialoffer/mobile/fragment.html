@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<th:block th:fragment="content-footer">
+        <footer id="footer">
+			<p>Copyright &copy; NCSOFT Corporation. All Rights Reserved.</p>
+			<span class="footer_img"></span>
+			<ul class="sns_list">
+				<li><a href="#" data-share="facebook">페이스북공유하기</a></li>
+				<li><a href="#" data-share="twitter">트위터공유하기</a></li>
+			</ul>
+        </footer>
+	</th:block>
+	<!--/* layer */-->
+	<th:block th:fragment="content-layer">
+		<div id="privacyLayer">
+			<button type="button" class="layer_close" data-layer="close">닫기</button>
+		</div>
+
+		<div id="advLayer">
+			<button type="button" class="layer_close" data-layer="close">닫기</button>
+		</div>
+	</th:block>
+	<th:block th:fragment="content-js">
+        <script th:src="|${ui['wstatic.default']}/promokit/v1.0/js/promokit.js|"></script>
+		<script th:src="|${ui['wstatic.bns']}/event/2018/180516_tusa/js/m.ui.tusa.js|"></script>
+	</th:block>
+</body>
+</html>

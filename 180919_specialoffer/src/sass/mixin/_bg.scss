@@ -1,0 +1,18 @@
+@mixin bg($color:false, $bg:false, $repeat:false, $position:false) {
+	@if $color{
+		background-color:$color;
+	}
+	@if $bg{
+		background-image: url($static + $folder +'/img/'+ $bg);
+	}
+	@if $repeat{
+		background-repeat: $repeat;
+	} @else {
+		background-repeat: no-repeat;
+	}
+	@if $position{
+		background-position: $position;
+	} @else {
+		background-position: 50% 0;
+	}
+}

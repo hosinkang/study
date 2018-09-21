@@ -1,0 +1,29 @@
+$static:'/promo/bns/event/2018/';
+$folder:'180919_specialoffer';
+
+$minWidth:1100px;
+$imgWidth:2200px;
+
+$fontFamily:'Malgun Gothic', '맑은고딕', Dotum, '돋움', Hevetica, AppleGothic, sans-serif;
+$baseFontSize:12px;
+$indentValue:-999em;
+
+$fontColor:#5c79a2;
+$linkColor:#6096e3;
+$bodyColor:#102137;
+
+$button:(
+	'.btn-link-home': (
+		'width':125,
+		'height':65,
+		'left': 30,
+		'top':34,
+		'bg':'logo.png'
+	),
+	'.btn-click-update': (
+		'width':146,
+		'height':35,
+		'top':42,
+		'bg':'btn.png'
+	),
+);
